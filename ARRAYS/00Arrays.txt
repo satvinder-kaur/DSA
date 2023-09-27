@@ -1,0 +1,42 @@
+An array is a collection of items of same datatype.
+At a memory level, arrays are stored in contiguous locations i.e. all the elements are stored in adjacent memory locations and in order.
+We can find length of array using length method.
+Eg arrName.length; returns size of array.
+
+We can have an array of integers , array of floats , array of doubles,array of boolean , etc.
+
+Some commonly used array operations are:
+
+	- Traversing: This is visiting each element in the array in order.
+	- Insertion: An element can be inserted into the array at a specific index.
+	- Deletion: An element can be deleted from a specific index in an array.
+	- Updates: Update the value at a given index.
+	- Sorting: The array can be reordered based on the values.
+	- Searching: Find the index of an element given a value.
+
+
+
+
+CREATION and INITIALISATION OF ARRAYS 
+
+I) One-dimemnsional Arrays 
+		int arr[];		//Creation
+		int[] arr;
+		
+		int[] arr = new int[size]   //Instantiating - creating and allocating memory to array
+		
+		******In Java,all arrays are dynamically allocated******
+		
+		int[] arr = new int[]{ 1,2,3,4,5,6,7,8,9,10}; //Creating and assigning elements
+		String arrStr[]={"Hello","World"};  //array of stings
+		
+II) Multi-dimensional Arrays
+		Multidimensional arrays are arrays of arrays with each element of the array
+		holding the reference of other arrays. These are also known as Jagged Arrays.
+		
+		int[][] arr= new int[10][30]; //a 2D array
+		int[][][] intArray = new int[10][20][10]; //a 3D array
+				
+        int arr[][]= { { 2, 7, 9 }, { 3, 6, 1 }, { 7, 4, 2 } }; // declaring and initializing 2D array
+		
+		
