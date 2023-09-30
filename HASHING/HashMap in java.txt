@@ -1,0 +1,77 @@
+
+What is HashMap ? 
+
+* Hash table based implementation of the Map interface is called HashMap.
+* Java HashMap is similar to HashTable, but it is unsynchronized. 
+* It allows to store the null keys as well, but there should be only one null key object 
+  and there can be any number of null values. 
+* This class makes no guarantees as to the order of the map. 
+  in particular, it does not guarantee that the order will remain constant over time.
+* To use this class and its methods, you need to import java.util.HashMap package or its superclass.
+
+
+Methods:
+
+	//Creation of hashmap 
+	HashMap<KeyDataType,ValueDataType> mapName= new HashMap<>();
+	HashMap<String,Integer> map = new HashMap<String,Integer>();
+	
+	//Adding elements to map using put()
+	map.put("Monday",1);		//Keys must be unique, there may be duplicate values.
+	map.put("Tuesday",2); 
+  
+    //Printing size of map
+	System.out.println("Size of map = "+map.size());
+	
+	//Printing map
+	System.out.println("Map : "+map);  //{Monday=1,Tuesday=2}
+	
+	//Checking if a key is present using containsKey() method
+	System.out.println("Is friday present : "+map.containsKey("Friday")); //false
+	
+	//Checking if a value is present using containsValue() method
+	map.containsValue(2)); //true
+	
+	//Getting value of key using get() method
+	System.out.println(map.get("Tuesday"));	//2
+	System.out.println(map.get("Friday"));	//null
+		
+	//Traversing map using entrySet() method
+	for(Map.Entry<String,Integer> entry : map.entrySet()){    
+		System.out.println(entry.getKey()+" "+entry.getValue());    
+    }  
+   
+    //Traversing map using keySet() method
+	//Make set of only keys 
+	Set<String> keys=map.keySet();
+	for(String key : keys){
+		System.out.println(key+" "+map.get(key));
+	}
+	
+	//Removing an element(key) using remove() method
+    map.remove("Monday");
+	
+	
+
+
+Other methods:
+
+
+	The getOrDefault(Object key, V defaultValue) method of Map interface, implemented by HashMap class is used to get
+	the value mapped with specified key. If no value is mapped with the provided key then the default value is returned.
+	eg.map.getOrDefault("Friday",5); //Since friday is not present in map it will return the deafult value i.e. 5
+	   map.getOrDefault("Monday",5); //returns 1
+	
+	
+	The java.util.HashMap.putAll() is an inbuilt method of HashMap class that is used for the copy operation.
+	The method copies all of the elements i.e., the mappings, from one map into another.
+	Eg. new_hash_map.putAll(hash_map);
+	
+	
+	The AbstractMap.equals() method in Java is used to check for equality between two maps. 
+	It verifies whether the elements of one map passed as a parameter is equal to the elements of this map or not.
+	Eg. AbstractMap<Integer, String> abstract_hash1 = new IdentityHashMap<Integer, String>();  
+        AbstractMap<Integer, String> abstract_hash2 = new IdentityHashMap<Integer, String>();
+		AbstractMap1.equals(AbstractMap2);
+	
+	
