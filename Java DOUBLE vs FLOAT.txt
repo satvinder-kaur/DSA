@@ -1,0 +1,52 @@
+In java if we try the below code we will get 
+		
+		float myboat = 1.2;
+		float yourBoat = 10 * 2.5;
+		float theBoat = Math.PI * 10;
+		
+		we get :- 
+				error: incompatible types: possible lossy conversion from double to float
+				
+				
+	  * This is because whenever Java encounters a decimal in a program, or a calculation generates 
+		a floating point number, Java treats the number as a double by default.
+
+So how do we declare double and float ?
+
+	To declare a double in Java, do the following:
+
+	-> Specify the type as double.
+	-> Provide a variable name.
+	-> Assign a value within the range of a double.
+	-> Eg. double num = 123.456;
+	
+	To declare a float in Java, do the following:
+
+	-> Specify the type as double.
+	-> Provide a variable name.
+	-> Assign a value within the range of a double.
+	-> Append the letter f after the last number
+	-> Eg. float num2 = 23.4;
+
+Solution to the first code :
+
+		float myboat = 1.2f;  //explicit notation
+		double yourBoat = 10 * 2.5;  //change from float to double
+		float theBoat = (float) (Math.PI * 10);  // explicit cast from double to float
+
+
+
+Range of double and float 
+
+	System.out.println(Double.MAX_VALUE);
+	System.out.println(Double.MIN_VALUE);
+	System.out.println(Float.MAX_VALUE);
+	System.out.println(Float.MIN_VALUE);
+	
+	1. The upper range of a double in Java is 1.7976931348623157E308.
+	2. The lower range of a double in Java is 4.9E-324.
+	3. The upper range of a float in Java is 3.4028235E38.
+	4. The lower range of a float in Java is 1.4E-45.
+	
+
+

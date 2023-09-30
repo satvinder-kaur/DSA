@@ -1,0 +1,61 @@
+Data types in java
+
+Primitive Datatypes : (8)
+I) Number :
+		To hold integer values : 
+			* A byte is an 8-bit signed integer. Range: -128 to 127 (inclusive).
+			* A short is a 16-bit signed integer.Range: -32,768 to 32,767 (inclusive).
+			* An int is a 32-bit signed integer.Range: -2^31 to 2^31 - 1 (inclusive).
+			* A long is a 64-bit signed integer.Range: -2^63 to 2^63 - 1 (inclusive).
+			
+		To hold decimal values :
+			* A float is a single-precision 32-bit IEEE 754 floating point.
+			  This data type should never be used for precise values.
+			  Use the java.math.BigDecimal class instead.
+			* The double data type is a double-precision 64-bit IEEE 754 floating point.
+			  For decimal values, this data type is generally the default choice.
+
+II) Boolean : 
+		The boolean data type has only two possible values: true and false.
+
+III) Character : 
+		The char data type is a single 16-bit Unicode character. 
+		Range :minimum value of '\u0000' (or 0) and a maximum value of '\uffff' (or 65,535 inclusive).
+			
+
+In addition to the eight primitive data types listed above, the Java programming language 
+also provides special support for character strings via the java.lang.String class. 
+
+Enclosing your character string within double quotes will automatically create a new String object;
+for example, String s = "this is a string";
+
+
+
+Exercise : 
+	Given an integer n print it in 8 digit format 
+	Eg. n=461012 then o/p should be 00461012.
+	
+	long n = 461012;
+      System.out.format("%d%n", n);      //  -->  "461012"		%d - for integers, %n- for newline (use %n instead of \n)
+      System.out.format("%08d%n", n);    //  -->  "00461012"    %08-specifies no. of digits and leads them with zeroes
+      System.out.format("%+8d%n", n);    //  -->  " +461012"    %+8-specifies the positive sign and takes space for 8 digits inclusive the + sign.
+      System.out.format("%,8d%n", n);    // -->  " 461,012" 	%, - groups the digits %8 - specifies8 digits space.
+      System.out.format("%+,8d%n%n", n); //  -->  "+461,012"
+	  
+	  
+	double pi = Math.PI;
+      System.out.format("%f%n", pi);       // -->  "3.141593"
+      System.out.format("%.3f%n", pi);     // -->  "3.142"  	%.3f - three decimal places.
+      System.out.format("%10.3f%n", pi);   // -->  "     3.142"		%10.3f - total 10 units inclusive of decimal and 3 decimal after placea 
+      System.out.format("%-10.3f%n", pi);  // -->  "3.142"
+      System.out.format(Locale.FRANCE,"%-10.4f%n%n", pi); // -->  "3,1416"
+	  
+	Calendar c = Calendar.getInstance();
+      System.out.format("%tB %te, %tY%n", c, c, c); // -->  "May 29, 2006"
+      System.out.format("%tl:%tM %tp%n", c, c, c);  // -->  "2:34 am"
+      System.out.format("%tD%n", c);    // -->  "05/29/06"
+	  
+
+Reference : 
+https://docs.oracle.com/javase/tutorial/java/data/numberformat.html 
+https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html 

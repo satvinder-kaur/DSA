@@ -1,0 +1,26 @@
+Wrapper Classes in Java
+
+As the name suggests, wrapper classes are objects encapsulating primitive Java types.
+
+Each Java primitive has a corresponding wrapper:
+	boolean, byte, short, char, int, long, float, double to
+	Boolean, Byte, Short, Character, Integer, Long, Float, Double
+	
+What’s the purpose of a wrapper class?
+	Basically, generic classes only work with objects and don’t support primitives.
+	As a result, if we want to work with them, we have to convert primitive values into wrapper objects.
+	
+	Today, with autoboxing, we can easily do ArrayList.add(101) but internally Java converts the primitive
+	value to an Integer before storing it in the ArrayList using the valueOf() method.
+	
+How to convert Primitive value to wrapper class?
+	-> using valueOf() method 
+		Eg. Integer object = new Integer(121);
+			Integer anotherObject = Integer.valueOf(15);
+	-> “Boxing” refers to converting a primitive value into a corresponding wrapper object.
+		Because this can happen automatically, it’s known as autoboxing.
+			
+On the other hand, to convert from a wrapper object to a primitive value,
+	-> using method such as intValue(), doubleValue() etc:
+		Eg. int val = object.intValue();
+	-> when a wrapper object is unwrapped into a primitive value then this is known as "unboxing".
