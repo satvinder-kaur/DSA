@@ -1,0 +1,98 @@
+The List interface in Java provides a way to store the ordered collection. It is a child interface of Collection.
+We can store duplicate values in it.
+It is found in java.util package and inherits the Collection interface.
+
+Since List is an interface, objects cannot be created of the type list.
+We always need a class that implements this List in order to create an object.
+
+
+Classes of the List interface are 
+		- ArrayList
+		- LinkedList
+		- Stack
+		- Vector
+	
+	
+Creating List object(Arraylist)
+Syntax : List<Obj> list = new ArrayList<Obj> (); 
+
+		**generic classes only work with objects and don’t support primitives.
+		  As a result, if we want to work with them, we have to convert primitive values into wrapper objects.
+Object type should be wrapper classes like Integer,Boolean,Byte,Short,Character,Long,Float,Double
+
+
+Operations on the List : 
+
+Operation 1: Adding elements to List class using add() method
+
+		-> list.add(Object): This method is used to add an element at the end of the List.
+						Eg. list.add(12);
+		-> list.add(int index, Object): This method is used to add an element at a specific index in the List. 
+						If an element is already present on that index then it shifts it to the right.
+						Eg. list1.add(12);
+							list1.add(13);
+							list1.add(1,121);
+							list1.add(2,56);
+							System.out.println(list1);   //[12, 121, 56, 13]
+
+		
+Operation 2: Updating elements in List class using set() method
+		After adding the elements, if we wish to change the element, it can be done using the set() method.
+		-> list.set(index,obj);
+
+
+Operation 3: Searching for elements using indexOf(), lastIndexOf methods
+
+		-> indexOf(element): Returns the index of the first occurrence of the specified element in the list,
+							 or -1 if the element is not found      
+							 
+		-> lastIndexOf(element): Returns the index of the last occurrence of the specified element in the list,
+							 or -1 if the element is not found
+
+Operation 4: Removing elements using remove() method
+		
+		-> remove(Object): This method is used to simply remove an object from the List.
+						   If there are multiple such objects, then the first occurrence of the object is removed.
+						   
+		-> remove(int index): removes the element present at that specific index in the List.
+						   After removing the element, all the elements are moved to the left to fill the space and the indices of the objects are updated.
+		
+		-> remove(Integer.valueOf(num)) : used to remove integer rom arrayList by value.
+							It converts int to Integer using valueOf method and deletes num from the List.
+							Eg. list1.remove(Integer.valueOf(56));  // removes 56 from the list.
+	
+		->  Using Iterator.remove() method :
+							Eg. Iterator itr = al.iterator();  
+								while (itr.hasNext()) {   // Holds true till there is single element remaining in the object
+									int x = (Integer)itr.next(); // Remove elements smaller than 10 using Iterator.remove()
+									if (x < 10)
+									itr.remove();
+								}
+	
+Operation 5: Accessing Elements in List class using get() method
+		
+		-> get(int index): This method returns the element at the specified index in the list.
+				Eg. list.get(0); //returns 12
+
+
+Operation 6: Checking if an element is present in the List class using contains() method
+		
+		-> contains(Object): This method takes a single parameter, the object to be checked if it is present in the list.
+				Eg. list.contains(12); //returns true
+				
+				
+				
+				
+More functions of List interface:
+
+	-> addAll(int index, Collection collection)	: used to add another list at specific index.
+						If index is not specified it is appended at the end of the list.
+						Eg. list1.addAll(2,list2);
+						
+	-> size() : returns size of the list
+	
+	-> list1.equals(list2) : returns true if both lists are equal
+	
+	-> isEmpty() : returns true if list is empty else false
+	
+	-> sort(Comparator comp): sorts the list
