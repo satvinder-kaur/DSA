@@ -1,0 +1,66 @@
+
+* Linked List is a part of the Collection framework present in java.util package. 
+* This class is an implementation of the LinkedList data structure which is a linear data structure 
+  where the elements are not stored in contiguous locations.
+* Every element is a separate object with a data part and address part.
+* The elements are linked using pointers and addresses. 
+* Each element is known as a node. 
+
+* LinkedList acts as a dynamic array and we do not have to specify the size while creating it, 
+  the size of the list automatically increases when we dynamically add and remove items.
+* Internally, the LinkedList is implemented using the doubly linked list data structure. 
+
+
+Creation of LinkedList
+    LinkedList<String> ll = new LinkedList<String>(); //Creates an empty linked list
+
+Size of the list
+  -> .size() : returns size of the list
+
+Addition of elements
+    -> .add(element) : Appends the specified element to the end of this list.
+    -> .add(int index,element) : Inserts the specified element at the specified position in this list.
+    -> .addFirst(element) : inserts element at the beginning of this list.
+    -> .addLast(element) : inserts element at the end of this list.
+    -> .addAll(int index ,Collection c) : Inserts all of the elements in the specified collection into this list,
+                                          starting at the specified position. If no index is given,it appends the elements.
+    
+Deletion of elements
+    -> .remove() : retrieves and removes the head (first element) of this list.
+    -> .remove(int index) : removes the element at the specified position in this list.
+    -> .removeFirst() : removes and returns the first element from this list.
+    -> .removeLast() : removes and returns the first element from this list.
+    -> boolean .removeFirstOccurence(element) : remove the first occurrence of the specified element from the list. 
+                                                If there is no occurrence of the specified element the list remains unchanged. 
+    -> boolean .removeLasttOccurence(element) : remove the last occurrence of the specified element from the list. 
+                                                If there is no occurrence of the specified element the list remains unchanged.
+
+
+Updating elements of LinkedList
+    -> .set(int index,element) : replaces the element at the specified position in this list with the specified element.
+        (Indexing starts from 0)
+
+Accessing the list elements
+  -> .get(int index) : returns the element at the specified position in this list.
+  -> .getFirst() : returns the first element in this list.
+  -> .getLast() : returns the last element in this list.
+  -> .element() : retrieves but does not remove, the head (first element) of this list.
+
+Searching elements in the list
+  -> .indexOf(element) : returns the index of the first occurrence of the specified element in this list, or -1 if this list does not contain the element.
+  -> .lastIndexOf(element) : returns the index of the last occurrence of the specified element in this list, or -1 if this list does not contain the element.
+
+Printing the list 
+  -> System.out.println(listName);
+
+Reversing LinkedList
+  -> Collections.reverse(listName);
+
+  
+
+
+Difference between poll() and remove() methods :-
+  Poll() - It will give the head element of the queue and will remove the head element from queue. 
+           If queue is empty then it will return null. 
+  Remove()- It will give the head element of the queue and will remove the head element from queue. 
+            If queue is empty then it will throw an Exception.
