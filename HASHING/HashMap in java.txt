@@ -2,7 +2,7 @@
 What is HashMap ? 
 
 * Hash table based implementation of the Map interface is called HashMap.
-* Java HashMap is similar to HashTable, but it is unsynchronized. 
+* Java HashMap is similar to HashTable, but HashMap is unsynchronized. 
 * It allows to store the null keys as well, but there should be only one null key object 
   and there can be any number of null values. 
 * This class makes no guarantees as to the order of the map. 
@@ -20,7 +20,7 @@ Methods:
 	map.put("Monday",1);		//Keys must be unique, there may be duplicate values.
 	map.put("Tuesday",2); 
   
-    //Printing size of map
+        //Printing size of map
 	System.out.println("Size of map = "+map.size());
 	
 	//Printing map
@@ -39,7 +39,7 @@ Methods:
 	//Traversing map using entrySet() method
 	for(Map.Entry<String,Integer> entry : map.entrySet()){    
 		System.out.println(entry.getKey()+" "+entry.getValue());    
-    }  
+        }  
    
     //Traversing map using keySet() method
 	//Make set of only keys 
@@ -48,7 +48,7 @@ Methods:
 		System.out.println(key+" "+map.get(key));
 	}
 	
-	//Removing an element(key) using remove() method
+    //Removing an element(key) using remove() method
     map.remove("Monday");
 	
 	
