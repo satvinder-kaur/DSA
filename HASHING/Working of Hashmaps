@@ -1,0 +1,54 @@
+## How HashMaps Work Internally
+
+1. **Quick Recap of HashMap**:
+   - A `HashMap` in Java is part of the Collections framework. It allows you to store key-value pairs, where each key is mapped to a single value. Duplicate keys are not allowed.
+   - For example:
+     ```java
+     HashMap<String, String> map = new HashMap<>();
+     map.put("key", "value"); // Store a key-value pair
+     String retrievedValue = map.get("key"); // Retrieve the value associated with the key "key"
+     ```
+
+2. **Under the Hood**:
+   - A `HashMap` internally uses an array (often called a "bucket array") to store its key-value pairs.
+   - The size of this array is determined by the initial capacity of the `HashMap`. By default, it's 16.
+   - Each index position in the array can hold multiple `Node` objects. These nodes are essentially instances of `Map.Entry`, representing the key-value pairs.
+   - Here's a simplified representation of a `Node`:
+     ```java
+     static class Node<K, V> implements Map.Entry<K, V> {
+         final int hash; // Hash of the key
+         final K key;
+         V value;
+         Node<K, V> next; // Reference to the next node (if any)
+         // ...
+     }
+     ```
+   - The generated hash of the key object is stored to avoid recalculating the hash during comparisons, which improves performance.
+
+3. **Handling Collisions**:
+   - Hashing is used to locate buckets (array indices) for keys.
+   - When multiple keys produce the same hash (collision), they are stored in the same bucket using a linked list.
+   - However, when entries in a single bucket reach a threshold (default value is 8), the `HashMap` converts that bucket's internal structure from a linked list to a Red-Black Tree (JEP 180).
+   - This tree structure provides better performance (O(log n)) compared to the linked list (O(n)) for large buckets.
+   - When the number of nodes in a bucket decreases (below a certain threshold), the tree converts back to a linked list to balance performance with memory usage.
+
+4. **Hashing Function**:
+   - Hashing assigns a unique code (hash code) to an object based on its properties.
+   - A good hash function consistently produces the same hash code for equal objects.
+   - In `HashMap`, the hash code determines the bucket index where a key-value pair is stored.
+
+5. **Performance**:
+   - `HashMap` provides constant-time performance for basic operations like adding or retrieving elements.
+   - The trade-off is memory usage (due to linked lists or trees).
+
+In summary, `HashMap` efficiently organizes key-value pairs using hashing and handles collisions gracefully. It's a powerful tool for building efficient data structures in Java! 😊🔑🗄️
+
+If you have any more questions or need further clarification, feel free to ask!
+¹²³⁴⁵
+
+Source: Conversation with Copilot, 11/11/2024
+(1) Internal Working of HashMap: How HashMap Works? - HowToDoInJava. https://howtodoinjava.com/java/collections/hashmap/how-hashmap-works-in-java/.
+(2) Understanding Java HashMap: A Comprehensive Guide - W3docs. https://www.w3docs.com/learn-java/java-hashmap.html.
+(3) A Guide to HashMap in Java With Examples. https://builtin.com/articles/hashmap-in-java.
+(4) HashMap Under the Hood - Baeldung. https://www.baeldung.com/java-hashmap-advanced.
+(5) Java HashMap - W3Schools. https://www.w3schools.com/java/java_hashmap.asp.
